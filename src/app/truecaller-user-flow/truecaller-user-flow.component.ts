@@ -56,7 +56,7 @@ export class TruecallerUserFlowComponent implements OnInit {
       } else {
         this.fetchTruecallerUserFlow(this.requestId);
       }
-    }, 600);
+    }, 2000);
 
     // Clear the timeout when the component is destroyed
     this.router.events.subscribe((event) => {
