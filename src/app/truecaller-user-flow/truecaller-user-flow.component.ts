@@ -50,20 +50,30 @@ export class TruecallerUserFlowComponent implements OnInit {
     window.open(url);
 
     // Set a timeout to check if the Truecaller app was installed
-    const timeoutId = setTimeout(() => {
-      if (document.hasFocus()) {
-        alert("Oops, it seems like you don't have the Truecaller app installed. Disclaimer This pop will not come in production, user will continue with normal flow, this is only for testing");
-      } else {
-        this.fetchTruecallerUserFlow(this.requestId);
-      }
-    }, 2000);
+
+
+    this.fetchTruecallerUserFlow(this.requestId);
+
+
+    // const timeoutId = setTimeout(() => {
+
+
+
+    //   if (document.hasFocus()) {
+    //     alert("Oops, it seems like you don't have the Truecaller app installed. Disclaimer This pop will not come in production, user will continue with normal flow, this is only for testing");
+    //   } else {
+    //     this.fetchTruecallerUserFlow(this.requestId);
+    //   }
+    // }, 2000);
 
     // Clear the timeout when the component is destroyed
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        clearTimeout(timeoutId);
-      }
-    });
+    // this.router.events.subscribe((event) => {
+    //   if (event instanceof NavigationStart) {
+    //     clearTimeout(timeoutId);
+    //   }
+    // }
+
+    // );
   }
 
   generateUuid(): string {
